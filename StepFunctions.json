@@ -1,0 +1,16 @@
+{
+  "Comment": "Image resize workflow",
+  "StartAt": "ResizeImage",
+  "States": {
+    "ResizeImage": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:ca-central-1:821410798673:function:resize-image",
+      "Parameters": {
+        "source_bucket.$": "$.bucket",
+        "source_key.$": "$.key",
+        "destination_bucket": "resizes-image"
+      },
+      "End": true
+    }
+  }
+}
