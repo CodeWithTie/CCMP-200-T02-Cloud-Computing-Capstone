@@ -49,13 +49,13 @@ See project root for `lambda/`, `stepfunctions/`, `api_gateway/`, and `demo/`.
        "input": "$util.escapeJavaScript($input.body)"
      }
      ```
-   - Deploy API to stage `prod`
-   - Final endpoint: `https://{api_id}.execute-api.ca-central-1.amazonaws.com/prod/resize`
+   - Deploy API to stage `pimageresizeproduction`
+   - Final endpoint: `https://{api_id}.execute-api.ca-central-1.amazonaws.com/imageresizeproduction/resize`
 
 5. Test:
    - Upload an image to the original bucket, e.g., `dog.png`
    - POST to the endpoint with body:
      ```json
-     {"bucket":"original-bucket-name","key":"dog.png"}
+     {""bucket": "images-orginal","key": "dog.png""}
      ```
    - Confirm a thumbnail appears in `resizes-image` with key `thumbnail-dog.png`
